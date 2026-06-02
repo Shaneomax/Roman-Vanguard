@@ -17,6 +17,10 @@ MonoBehaviour:
   icon: {fileID: 3012693776038647133, guid: 4c6ca2059aa23414787f17acb9d45f11, type: 3}
   itemType: 0
   classRequirement: 3
+  weaponSubType: 0
+  armorSubType: 0
+  foodDrinkSubType: 0
+  worldPrefab: {fileID: 887037674044666990, guid: f6f73da6f8e517e4da636dc09a56b04c, type: 3}
   priceDenarii: 38
   canBeSoldInShop: 1
   stackable: 0

@@ -3,7 +3,15 @@ using UnityEngine;
 
 public class ShopInteractable : MonoBehaviour, IInteractable
 {
+    [Header("Shop Identity")]
+    [Tooltip("Displayed as the shop panel title. E.g. 'Armamentarium', 'Market Stall', 'Tavern'.")]
+    public string shopName = "Shop";
+
+    [Tooltip("When true, an 'All' tab is shown alongside the category tabs.")]
+    public bool showAllTab = true;
+
     [Header("Shop Inventory")]
+    [Tooltip("Drag ShopItemData ScriptableObjects here to define what this shop sells.")]
     public List<ShopItemData> itemsForSale = new List<ShopItemData>();
 
     [Header("UI")]

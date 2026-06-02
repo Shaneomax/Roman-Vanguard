@@ -4,10 +4,15 @@ using UnityEngine.UI;
 
 public class ShopItemRowUI : MonoBehaviour
 {
+    [Header("Required")]
     public Image iconImage;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI priceText;
+
+    [Header("Optional")]
     public TextMeshProUGUI classText;
+    [Tooltip("Shows the item sub-type label (e.g. 'Sword', 'Helmet', 'Potion'). Leave empty to skip.")]
+    public TextMeshProUGUI subTypeText;
     public Button button;
 
     private ShopUI shopUI;
@@ -16,12 +21,12 @@ public class ShopItemRowUI : MonoBehaviour
     public void Setup(ShopUI shopUI, ShopItemData item)
     {
         this.shopUI = shopUI;
-        this.item = item;
+        this.item   = item;
 
         if (iconImage != null)
         {
             iconImage.enabled = item.icon != null;
-            iconImage.sprite = item.icon;
+            iconImage.sprite  = item.icon;
             iconImage.preserveAspect = true;
         }
 
@@ -33,6 +38,13 @@ public class ShopItemRowUI : MonoBehaviour
 
         if (classText != null)
             classText.text = item.GetClassText();
+
+        if (subTypeText != null)
+        {
+            string label = item.GetSubTypeLabel();
+            subTypeText.text    = label;
+            subTypeText.enabled = !string.IsNullOrEmpty(label);
+        }
 
         if (button == null)
             button = GetComponent<Button>();

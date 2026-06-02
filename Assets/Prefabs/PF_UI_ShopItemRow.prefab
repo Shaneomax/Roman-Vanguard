@@ -415,6 +415,7 @@ MonoBehaviour:
   nameText: {fileID: 2951325425890849455}
   priceText: {fileID: 8924281133273005526}
   classText: {fileID: 4289869063918765698}
+  subTypeText: {fileID: 0}
   button: {fileID: 8517815300043506843}
 --- !u!1 &6975556901603166218
 GameObject:
